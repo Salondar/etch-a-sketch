@@ -1,4 +1,15 @@
-.container {
+#container {
     width: 600px;
-    height: 600px;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
