@@ -1,5 +1,9 @@
-container = document.querySelector('#container');
-let gridSize = 16;
+const container = document.querySelector('#container');
+let slider = document.querySelector('.slider');
+let outputPara = document.querySelector('.gridRange');
+const eraseButton = document.querySelector('.eraseButton');
+
+outputPara.innerHTML += `${slider.value}x${slider.value}`;
 
 
 function makeGrid(gridSize) {
@@ -11,7 +15,7 @@ function makeGrid(gridSize) {
         row.style.display = 'flex';
         row.style.height = boxHeight;
         container.appendChild(row);
-        
+
         for (let j = 0; j < gridSize; j++) {
             let rowBox = document.createElement('div');
             rowBox.setAttribute('id', `square`);
@@ -31,4 +35,16 @@ container.addEventListener("mouseover", (event) => {
     }
 });
 
+slider.oninput = function()  {
+    outputPara.innerHTML = "Grid size: "
+    outputPara.innerHTML += `${this.value} x ${this.value}`;
+}
+
+let gridSize = Number(slider.value);
 makeGrid(gridSize);
+
+slider.addEventListener('mouseup', () => {
+    let gridSize = Number(slider.value);
+    container.innerHTML = '';
+    makeGrid(gridSize);
+});
