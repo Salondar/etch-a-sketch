@@ -21,7 +21,7 @@ function makeGrid(gridSize) {
             rowBox.setAttribute('id', `square`);
             rowBox.style.flex = '1 1 auto';
             rowBox.style.margin = "1px";
-            rowBox.style.backgroundColor = "green";
+            rowBox.style.backgroundColor = "#00563B";
             rowBox.style.border = "1px solid black";
             row.appendChild(rowBox);
         }
@@ -63,4 +63,5 @@ eraseButton.addEventListener("click", () => {
     else {
         eraseONOFF = true;
     }
+    event.target.focus;
 });
