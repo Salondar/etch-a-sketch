@@ -2,7 +2,7 @@ const container = document.querySelector('#container');
 let slider = document.querySelector('.slider');
 let outputPara = document.querySelector('.gridRange');
 const eraseButton = document.querySelector('.eraseButton');
-let eraseONOFF = false;
+let eraseON = false;
 
 outputPara.innerHTML += `${slider.value}x${slider.value}`;
 
@@ -31,11 +31,11 @@ function makeGrid(gridSize) {
 container.addEventListener("mouseover", (event) => {
     const target = event.target;
     if (target.id === 'square') {
-        if (eraseONOFF === true) {
-            target.style.backgroundColor = 'green'
+        if (eraseON === false) {
+            target.style.backgroundColor = 'black';
         }
         else {
-            target.style.backgroundColor = 'black';
+            target.style.backgroundColor = '#00563B';
         }
     }
 });
@@ -55,13 +55,16 @@ slider.addEventListener('mouseup', () => {
     makeGrid(gridSize);
 });
 
+eraseButton.addEventListener("mouseover", () => eraseButton.focus());
+eraseButton.addEventListener("mouseout", () => eraseButton.blur());
 eraseButton.addEventListener("click", () => {
 
-    if (eraseONOFF === true) {
-        eraseONOFF = false;
+    if (eraseON === true) {
+        eraseON = false;
+        eraseButton.style.backgroundColor = '#0096FF';
     }
-    else {
-        eraseONOFF = true;
+    else if (eraseON === false) {
+        eraseON = true;
+        eraseButton.style.backgroundColor = '#0492C2';
     }
-    event.target.focus;
 });
