@@ -45,7 +45,6 @@ slider.oninput = function()  {
     outputPara.innerHTML += `${this.value} x ${this.value}`;
 }
 
-
 let gridSize = Number(slider.value);
 makeGrid(gridSize);
 
@@ -58,13 +57,14 @@ slider.addEventListener('mouseup', () => {
 eraseButton.addEventListener("mouseover", () => eraseButton.focus());
 eraseButton.addEventListener("mouseout", () => eraseButton.blur());
 eraseButton.addEventListener("click", () => {
-
     if (eraseON === true) {
         eraseON = false;
         eraseButton.style.backgroundColor = '#0096FF';
+        eraseButton.innerHTML = 'Erase';
     }
     else if (eraseON === false) {
         eraseON = true;
         eraseButton.style.backgroundColor = '#0492C2';
+        eraseButton.innerHTML = 'ON';
     }
 });
