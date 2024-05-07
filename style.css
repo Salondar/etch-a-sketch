@@ -4,6 +4,7 @@
 }
 
 body {
+    background-color: #FFFDD0;
     display: flex;
     margin: 0;
     justify-content: space-around;
@@ -40,7 +41,7 @@ h1 {
 }
 
 .eraseButton {
-    background-color:  #00563B;
+    background-color: #0096FF; 
     border: none;
     width: 70px;
     height: 70px;
